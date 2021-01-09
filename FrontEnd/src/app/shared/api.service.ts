@@ -44,15 +44,6 @@ export class ApiService {
     );
   }
 
-  // HttpClient API post() method => Create hero
-  createHero(hero): Observable<Hero> {
-    return this.http.post<Hero>(this.apiURL + '/api/heroes', JSON.stringify(hero), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    );
-  }
-
   /*
   // HttpClient API put() method => Update hero
   evolveHero(id, hero): Observable<Hero> {
